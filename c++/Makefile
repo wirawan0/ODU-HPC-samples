@@ -12,6 +12,9 @@ LDFLAGS =
 mattest1.exe: mattest1.o
 	$(LD) $(LDFLAGS) $^ -o $@
 
+matread1.exe: matread1.o
+	$(LD) $(LDFLAGS) $^ -o $@
+
 matmul.exe: matmul.o
 	$(LD) $(LDFLAGS) $^ -o $@
 

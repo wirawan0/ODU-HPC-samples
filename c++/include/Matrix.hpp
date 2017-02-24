@@ -1,6 +1,8 @@
 #ifndef _WP_Matrix_hpp_
 #define _WP_Matrix_hpp_
 
+#include <algorithm>
+#include <cassert> // TEMPORARY
 #include <iostream>
 
 //  A simple C++ class to represent a column major matrix for
@@ -21,6 +23,18 @@ public:
         this->_cols = _cols;
         if (_rows && _cols)
             _M = new value_type[_rows * _cols];
+        else
+            _M = NULL;
+    }
+    inline Matrix(const Matrix<_number> &src)
+    {
+        this->_rows = src._rows;
+        this->_cols = src._cols;
+        if (_rows && _cols)
+        {
+            _M = new value_type[_rows * _cols];
+            std::copy(src._M, src._M + (_rows*_cols), _M);
+        }
         else
             _M = NULL;
     }
@@ -50,15 +64,12 @@ public:
 template <typename _number>
 void printmatrix1(const Matrix<_number> &M, std::ostream &F);
 
+template <typename _number>
+Matrix<_number> readmatrix1(std::istream &F);
 
 
-//  Friend functions and other functions related to Matrix class ---------
-//  - matrix displaying subroutines
-//  - matrix multiplications
 
-//.section printmatrix1
-
-// temporary functions to print matrix
+// temporary functions to print a matrix
 template <typename _number>
 void printmatrix1(const Matrix<_number> &M, std::ostream &F)
 {
@@ -78,6 +89,36 @@ void printmatrix1(const Matrix<_number> &M, std::ostream &F)
             F << endl;
         }
     }
+}
+
+
+// temporary functions to read a matrix
+// WARNING: This is
+template <typename _number>
+Matrix<_number> readmatrix1(std::istream &F)
+{
+    std::string code1;
+    int rows, cols;
+    F >> code1 >> rows >> cols;
+
+    assert(code1 == "MATRIX");
+    assert(rows >= 0);
+    assert(cols >= 0);
+
+    Matrix<_number> M(rows, cols);
+
+    if (M.numrows() > 0 && M.numcols() > 0)
+    {
+        for (int i = 0; i < M.numrows(); ++i)
+        {
+            for (int j = 0; j < M.numcols(); ++j)
+            {
+                F >> M(i,j);
+                //std::cout << i << " " << j << " : " << M(i,j) << std::endl;
+            }
+        }
+    }
+    return M;
 }
 
 #endif

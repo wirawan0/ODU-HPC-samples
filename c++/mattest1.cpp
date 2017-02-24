@@ -1,9 +1,9 @@
 /************************************************************************\
 
-    matmul.cpp
-    Matrix multiplication demo
+    mattest1.cpp
+    A demo program to create a matrix & printing it
 
-    A demo HPC program
+    Created: 20170224
 
 \************************************************************************/
 

@@ -1,9 +1,9 @@
 /************************************************************************\
 
-    matmul.cpp
-    Matrix multiplication demo
+    matread1.cpp
+    A demo program to read a matrix from a text file
 
-    A demo HPC program
+    Created: 20170224
 
 \************************************************************************/
 

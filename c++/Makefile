@@ -15,9 +15,12 @@ mattest1.exe: mattest1.o
 matread1.exe: matread1.o
 	$(LD) $(LDFLAGS) $^ -o $@
 
-matmul.exe: matmul.o
+matmul1.exe: matmul1.o
 	$(LD) $(LDFLAGS) $^ -o $@
 
 %.o: %.cpp
 	$(CXX) -c $< -o $@ $(CXXFLAGS)
+
+clean:
+	rm *.exe *.o
 

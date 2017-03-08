@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# Sample job for python
+# For SGE scheduler
+# Created: 20170308
+#
+# Uses bash as the interpreter of this job script
+#$ -S /bin/bash
+#
+# Gives a name to this job 
+#$ -N Matmul-1x2
+#
+# Starts the job
+#$ -cwd
+#
+# Allow override of sample set root
+#$ -v HPC_SAMPLES_ROOT
+
+
+if [ -z "$HPC_SAMPLES_ROOT" ]; then
+  HPC_SAMPLES_ROOT=../..
+fi
+PROG_DIR=$HPC_SAMPLES_ROOT/python
+MATRIX_DIR=$HPC_SAMPLES_ROOT/samples/matrices
+
+# For debugging only
+#set -x
+
+module load python/2.7.11
+
+# For debugging only
+# module list
+
+# Performs matrix multiplication of matrix01.in and matrix02.in
+python  "$PROG_DIR/matmul1.py"  \
+        "$MATRIX_DIR/matrix01.in"  \
+        "$MATRIX_DIR/matrix02.in"
+

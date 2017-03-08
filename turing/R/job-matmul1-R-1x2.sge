@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# Sample job for R
+# For SGE scheduler
+# Created: 20170307
+#
+# Uses bash as the interpreter of this job script
+#$ -S /bin/bash
+#
+# Gives a name to this job 
+#$ -N Matmul-1x2
+#
+# Starts the job
+#$ -cwd
+#
+# Allow override of sample set root
+#$ -v HPC_SAMPLES_ROOT
+
+
+if [ -z "$HPC_SAMPLES_ROOT" ]; then
+  HPC_SAMPLES_ROOT=../..
+fi
+PROG_DIR=$HPC_SAMPLES_ROOT/R
+MATRIX_DIR=$HPC_SAMPLES_ROOT/samples/matrices
+
+# For debugging only
+#set -x
+
+module load gcc R
+
+# For debugging only
+#module list
+
+# Performs matrix multiplication of matrix01.in and matrix02.in
+Rscript --vanilla  "$PROG_DIR/matmul1.R"  \
+                   "$MATRIX_DIR/matrix01.in"  \
+                   "$MATRIX_DIR/matrix02.in"
+
+
+

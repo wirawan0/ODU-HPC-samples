@@ -1,6 +1,8 @@
 # Sample codes for HPC
 
-Revision: 20170309
+Version 0.01
+
+Date: 2017-03-09
 
 This is a collection of sample programs, job scripts, and input files
 to help new users become familiar with ODU's HPC environment.
@@ -12,6 +14,8 @@ The samples include programs written in C++, Python, and R and their
 batch job scripts.
 
 Sample scripts for SGE job scheduler for Turing HPC are also provided.
+These sample scripts are provided in `turing/<LANG>` subdirectory for
+samples written in the `<LANG>` languages.
 
 
 ## Help

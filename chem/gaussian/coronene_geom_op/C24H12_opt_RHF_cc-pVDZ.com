@@ -1,6 +1,17 @@
-! Coronene (C24H12) in cc-pVQZ basis
+! Coronene (C24H12) in cc-pVDZ basis
 ! See https://cccbdb.nist.gov/
 ! Starting coordinate below is for RHF/STO-3G
+
+! If you want, please uncomment the following
+! so that your scratch files go to the fast filesystem
+! (on Wahab).
+! See: http://gaussian.com/running/?tabid=2
+!
+! But please do not forget to adjust the path, and
+! replace $USER with your own user ID!
+!%RWF=/scratch/$USER/G09-scratch/
+!%Int=/scratch/$USER/G09-scratch/
+!%D2E=/scratch/$USER/G09-scratch/
 
 ! %save
 %mem=4096MB

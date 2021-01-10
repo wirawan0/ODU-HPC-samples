@@ -19,13 +19,36 @@ About SU2:
 *(taken from SU2 website, <https://su2code.github.io/docs_v7/home/>)*
 
 
+ABOUT SU2 SAMPLES
+
 Sample files for SU2 included in this repository were taken from
 
 https://github.com/su2code/Tutorials.git
 
+The sample jobs in this folder and its subfolders are also made for
+"Intro-to-HPC" workshop at ODU, hosted by ITS Research Computing
+Services. This folder is also available on Wahab at the following
+path:
 
-(Thanks to Andy Moy for pointer to the sample collection & basic
-how-to on running SU2.)
+    /shared/HPC-samples/su2_sample
+
+More complete samples for SU2 code are available on Wahab and Turing
+at the following path:
+
+    /cm/shared/workshops/ODU-HPC-samples/wahab/su2
+
+This sample is a part of "ODU HPC samples", a repository of sample
+codes and calculations for various computational packages, available
+for free at:
+
+    https://github.com/odu-rcs/ODU-HPC-samples/
+
+Feel free to modify the samples to suit your own need.
 
 
-  
+ACKNOWLEDGMENTS
+
+Thanks to Andy Moy for the pointer to the sample collection & basic
+how-to on running SU2.
+
+

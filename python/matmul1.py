@@ -18,6 +18,7 @@ matrix-multiplication kernel (canned routine).
 
 """
 
+from __future__ import print_function
 import sys
 import numpy
 from np_helper import loadmatrix1, printmatrix1
@@ -81,7 +82,7 @@ def matmul_matdot(A, B):
 
 def matmul1(argv):
     if len(argv) < 3:
-        print >> sys.stderr, "Needs an input file name on arg1"
+        print("Needs an input file name on arg1", file=sys.stderr)
         sys.exit(1)
 
     matfile1 = argv[1]

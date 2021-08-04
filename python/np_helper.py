@@ -12,7 +12,7 @@ def loadmatrix1(filename):
     The output is written in the simple "MATRIX" format.
     """
     with open(filename, "r") as F:
-        header = F.next().split()
+        header = next(F).split()
         # The header should contain 3 elements:
         # "MATRIX", numrows, numcols
         assert header[0].upper() == "MATRIX"

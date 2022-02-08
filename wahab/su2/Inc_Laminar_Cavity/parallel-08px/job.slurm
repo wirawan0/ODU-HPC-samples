@@ -10,7 +10,7 @@
 # https://github.com/su2code/Tutorials/blob/master/incompressible_flow/Inc_Laminar_Cavity/lam_buoyancy_cavity.cfg
 
 enable_lmod
-module load container_env su2 slurm
+module load container_env su2/7.0.7 slurm
 
 echo "SU2 CFD simulation of incompressible laminar flow"
 echo "Parallel job calculation: $SLURM_NTASKS tasks"
